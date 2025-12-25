@@ -1,5 +1,6 @@
 'use client';
 import { useState } from 'react';
+import Image from 'next/image';
 
 export default function AdminPage() {
   const [users, setUsers] = useState<any[]>([]);
@@ -29,8 +30,8 @@ export default function AdminPage() {
     }
   };
 
-  const handleAction = async (userId: string, action: 'approve' | 'reject' | 'block' | 'unblock') => {
-    if(!confirm(`Are you sure you want to ${action} this user?`)) return;
+  const handleAction = async (userId: string, action: 'delete') => {
+    if(!confirm(`Are you sure you want to delete this user?`)) return;
 
     const res = await fetch('/api/admin/action', {
         method: 'POST',
@@ -72,7 +73,10 @@ export default function AdminPage() {
     <div className="min-h-screen bg-bg p-8">
       <div className="max-w-7xl mx-auto">
         <header className="flex justify-between items-center mb-8">
-          <h1 className="text-3xl font-bold text-dark">Admin Dashboard</h1>
+          <div className="flex items-center gap-4">
+            <Image src="/logo.png" alt="Stacq Logo" width={40} height={40} className="rounded-lg" />
+            <h1 className="text-3xl font-bold text-dark">Admin Dashboard</h1>
+          </div>
           <button onClick={() => window.location.reload()} className="text-sm text-red-500">Logout</button>
         </header>
         
@@ -80,58 +84,25 @@ export default function AdminPage() {
           <table className="w-full text-sm text-left">
             <thead className="bg-gray-50 text-gray-500 uppercase font-bold border-b">
               <tr>
-                <th className="p-4 w-1/4">User</th>
-                <th className="p-4">Role</th>
-                <th className="p-4">Status</th>
-                <th className="p-4 w-1/4">Creator Proof</th>
+                <th className="p-4">User</th>
                 <th className="p-4 text-right">Actions</th>
               </tr>
             </thead>
             <tbody className="divide-y">
               {users.map((u) => {
-                const proofLink = u.creator_applications?.[0]?.proof_content || u.creator_applications?.proof_content;
                 return (
                   <tr key={u.id} className="hover:bg-gray-50">
                     <td className="p-4">
                         <div className="font-bold text-dark">{u.name}</div>
                         <div className="text-gray-500 text-xs">{u.email}</div>
                     </td>
-                    <td className="p-4"><span className="bg-gray-100 px-2 py-1 rounded text-xs uppercase font-semibold">{u.role}</span></td>
-                    <td className="p-4">
-                        <span className={`px-2 py-1 rounded text-xs uppercase font-bold ${
-                            u.status === 'approved' ? 'text-primary bg-primary/10' : 
-                            u.status === 'pending' ? 'text-yellow-600 bg-yellow-100' : 
-                            u.status === 'blocked' ? 'text-black bg-gray-200' :
-                            'text-red-600 bg-red-100'
-                        }`}>
-                            {u.status}
-                        </span>
-                    </td>
-                    <td className="p-4">
-                        {proofLink ? (
-                            <a href={proofLink} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline font-medium flex items-center gap-1">
-                              Link ↗
-                            </a>
-                        ) : <span className="text-gray-300 text-xs">-</span>}
-                    </td>
-                    <td className="p-4 text-right space-x-2">
-                        {/* UNBLOCK BUTTON */}
-                        {u.status === 'blocked' ? (
-                           <button onClick={() => handleAction(u.id, 'unblock')} className="text-dark hover:bg-gray-200 border border-gray-300 px-3 py-1 rounded font-medium transition-colors">
-                             Unblock
-                           </button>
-                        ) : (
-                          <>
-                            {u.role === 'creator' && u.status === 'pending' && (
-                                <>
-                                    <button onClick={() => handleAction(u.id, 'approve')} className="text-primary hover:bg-primary/10 px-3 py-1 rounded font-medium transition-colors">Accept</button>
-                                    <button onClick={() => handleAction(u.id, 'reject')} className="text-red-500 hover:bg-red-50 px-3 py-1 rounded font-medium transition-colors">Reject</button>
-                                </>
-                            )}
-                            {/* Block button for non-blocked users */}
-                            <button onClick={() => handleAction(u.id, 'block')} className="text-gray-400 hover:text-red-600 text-xs transition-colors">Block</button>
-                          </>
-                        )}
+                    <td className="p-4 text-right">
+                        <button 
+                          onClick={() => handleAction(u.id, 'delete')} 
+                          className="text-red-500 hover:bg-red-50 border border-red-200 px-3 py-1 rounded font-medium transition-colors"
+                        >
+                          Delete
+                        </button>
                     </td>
                   </tr>
                 );

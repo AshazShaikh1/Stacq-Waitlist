@@ -13,14 +13,10 @@ export async function GET(req: NextRequest) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
 
-  // 2. Fetch Users AND their Creator Application details
-  // We use creator_applications(*) to get all fields including 'proof_content'
+  // 2. Fetch Users
   const { data: users, error } = await supabase
     .from('waitlist_users')
-    .select(`
-      *,
-      creator_applications (*)
-    `)
+    .select('*')
     .order('created_at', { ascending: false });
 
   if (error) {
