@@ -16,7 +16,7 @@ export default function HowItWorks() {
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-3xl -z-10 animate-pulse-slow"></div>
         
         <h1 className="text-5xl md:text-7xl font-bold mb-8 tracking-tighter text-dark leading-[1.1]">
-          How <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-[#1ED760]">Stacq</span> Works
+          How <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-[#1ED760]">Stacq</span> actually Works
         </h1>
         <p className="text-xl md:text-2xl text-gray-500 leading-relaxed max-w-2xl mx-auto">
           A simple way to save, organize, and discover useful resources — <span className="text-dark font-medium">curated by humans</span>.
@@ -25,14 +25,15 @@ export default function HowItWorks() {
 
       {/* 2. BIG IDEA SECTION */}
       <section className="px-6 mb-32 max-w-6xl mx-auto">
-        <h2 className="text-center text-3xl font-bold mb-12 text-dark">Built around two simple ideas</h2>
+        <h2 className="text-center text-3xl font-bold mb-12 text-dark">Two building blocks. Nothing more.</h2>
         <div className="grid md:grid-cols-2 gap-8 md:gap-12">
           {/* Cards Card */}
           <div className="group bg-white p-10 rounded-3xl shadow-xl shadow-gray-100 border border-gray-100 flex flex-col items-center text-center hover:shadow-2xl hover:-translate-y-1 transition-all duration-300 relative overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-blue-400 to-blue-600"></div>
             <div className="w-24 h-24 bg-blue-50 rounded-2xl flex items-center justify-center text-5xl mb-6 group-hover:scale-110 transition-transform duration-300">🃏</div>
             <h3 className="text-2xl font-bold mb-3 text-dark">Cards</h3>
-            <p className="text-gray-500 font-medium">Individual resources like articles, videos, or tools.</p>
+            <p className="text-gray-500">Card is a single useful thing.</p>
+            <p className="text-gray-500">A link, an image or a document that solved real problem.</p>
           </div>
           
           {/* Collections Card */}
@@ -40,7 +41,8 @@ export default function HowItWorks() {
             <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-primary to-green-400"></div>
             <div className="w-24 h-24 bg-green-50 rounded-2xl flex items-center justify-center text-5xl mb-6 group-hover:scale-110 transition-transform duration-300">📚</div>
             <h3 className="text-2xl font-bold mb-3 text-dark">Collections</h3>
-            <p className="text-gray-500 font-medium">Curated paths that group Cards into a logical order.</p>
+            <p className="text-gray-500">A collection is intentional ordering.</p>
+            <p className="text-gray-500">Not a dump — a path someone recommend going through.</p>
           </div>
         </div>
       </section>
@@ -51,8 +53,8 @@ export default function HowItWorks() {
         
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">Cards</h2>
-            <p className="text-gray-500 text-xl">The building blocks of knowledge.</p>
+            <h2 className="text-4xl font-bold mb-4">Cards are the smallest unit of value</h2>
+            <p className="text-gray-500 text-xl">Each Card exists for one reason: it helped someone</p>
           </div>
 
           {/* Visual Grid of Card Examples */}
@@ -117,14 +119,17 @@ export default function HowItWorks() {
       <section className="px-6 py-32 max-w-5xl mx-auto">
         <div className="flex flex-col md:flex-row items-center gap-16">
             <div className="flex-1 text-center md:text-left">
-                <h2 className="text-4xl font-bold mb-6 text-dark">Collections</h2>
+                <h2 className="text-4xl font-bold mb-6 text-dark">Collections bring clarity.</h2>
+                <p className="text-gray-500 text-xl mb-1 leading-relaxed">
+                    Insted of jumping between tabs, Collections guide you.
+                </p>
                 <p className="text-gray-500 text-xl mb-8 leading-relaxed">
-                    Stop opening 50 tabs. Collections group cards into a clear, linear path for learning or research.
+                    They reflect how someone actually learned or explored a topic.
                 </p>
                 <div className="flex flex-wrap gap-3 justify-center md:justify-start">
-                    <span className="bg-primary/10 px-4 py-2 rounded-full text-primary font-bold text-sm">Human-organized</span>
-                    <span className="bg-primary/10 px-4 py-2 rounded-full text-primary font-bold text-sm">Intentionally ordered</span>
-                    <span className="bg-primary/10 px-4 py-2 rounded-full text-primary font-bold text-sm">Topic-focused</span>
+                    <span className="bg-primary/10 px-4 py-2 rounded-full text-primary font-bold text-sm">Curated by experience</span>
+                    <span className="bg-primary/10 px-4 py-2 rounded-full text-primary font-bold text-sm">Order matters</span>
+                    <span className="bg-primary/10 px-4 py-2 rounded-full text-primary font-bold text-sm">One goal at a time</span>
                 </div>
             </div>
 
@@ -160,12 +165,12 @@ export default function HowItWorks() {
       <section className="px-6 py-24 bg-gray-50 border-y border-gray-100">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-16">
-                <h2 className="text-4xl font-bold mb-2">Who publishes on Stacq?</h2>
+                <h2 className="text-4xl font-bold mb-2">Who puts content on Stacq?</h2>
                 <div className="inline-block bg-white px-4 py-1 rounded-full border border-gray-200 mt-4 shadow-sm">
                     <span className="text-primary font-bold uppercase tracking-widest text-sm">Stacqers</span>
                 </div>
                 <p className="text-gray-500 mt-6 max-w-2xl mx-auto text-lg">
-                    Stacqers are real people—developers, researchers, and learners—who publish public Cards and Collections.
+                    Public content on Stacq is published by Stacqers — people who choose to share what genuinely worked for them.
                 </p>
             </div>
 
@@ -181,21 +186,21 @@ export default function HowItWorks() {
                             <div className="bg-primary/10 p-2 rounded-lg text-xl">✨</div>
                             <div>
                                 <h4 className="font-bold text-dark">Publish Content</h4>
-                                <p className="text-sm text-gray-500">Share your best resources.</p>
+                                <p className="text-sm text-gray-500">Share resources you personally used.</p>
                             </div>
                         </li>
                         <li className="flex items-start gap-4">
                             <div className="bg-primary/10 p-2 rounded-lg text-xl">🧠</div>
                             <div>
                                 <h4 className="font-bold text-dark">Curate Knowledge</h4>
-                                <p className="text-sm text-gray-500">Organize chaos into paths.</p>
+                                <p className="text-sm text-gray-500">Turn scattered links into clear paths.</p>
                             </div>
                         </li>
                         <li className="flex items-start gap-4">
                             <div className="bg-primary/10 p-2 rounded-lg text-xl">🏆</div>
                             <div>
                                 <h4 className="font-bold text-dark">Build Authority</h4>
-                                <p className="text-sm text-gray-500">Become a trusted source.</p>
+                                <p className="text-sm text-gray-500">Earn trust through usefulness, not noise.</p>
                             </div>
                         </li>
                     </ul>
@@ -210,15 +215,15 @@ export default function HowItWorks() {
                     <ul className="space-y-4">
                         <li className="flex items-center gap-4 text-gray-600">
                              <div className="bg-gray-100 p-2 rounded-lg">👀</div>
-                             <span className="font-medium">Browse public content</span>
+                             <span className="font-medium">Explore public Cards & Collection</span>
                         </li>
                         <li className="flex items-center gap-4 text-gray-600">
                              <div className="bg-gray-100 p-2 rounded-lg">💾</div>
-                             <span className="font-medium">Save for later</span>
+                             <span className="font-medium">Save what matters</span>
                         </li>
                         <li className="flex items-center gap-4 text-gray-600">
                              <div className="bg-gray-100 p-2 rounded-lg">🔔</div>
-                             <span className="font-medium">Follow curators</span>
+                             <span className="font-medium">Follow people you trust</span>
                         </li>
                     </ul>
                 </div>
@@ -228,22 +233,24 @@ export default function HowItWorks() {
 
       {/* 6. WHY STACQ EXISTS */}
       <section className="px-6 py-24 max-w-5xl mx-auto">
-         <h2 className="text-3xl font-bold mb-12 text-center">Why we built this</h2>
+         <h2 className="text-3xl font-bold mb-12 text-center">Why we built Stacq</h2>
          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-gray-50 p-6 rounded-2xl text-center">
+            <div className="bg-gray-50 p-6 rounded-2xl text-center hover:bg-primary/5 hover:border-primary/20 hover:rounded-2xl transition-all duration-100">
                 <div className="text-4xl mb-4">🔍</div>
                 <h3 className="font-bold mb-2">The SEO Problem</h3>
-                <p className="text-sm text-gray-500">Search engines today reward SEO optimization over actual usefulness.</p>
+                <p className="text-sm text-gray-500">Search rewards optimization.</p>
+                <p className="text-sm text-gray-500">Not usefulness</p>
             </div>
-            <div className="bg-gray-50 p-6 rounded-2xl text-center">
+            <div className="bg-gray-50 p-6 rounded-2xl text-center hover:bg-primary/5 hover:border-primary/20 hover:rounded-2xl transition-all duration-100">
                 <div className="text-4xl mb-4">📱</div>
                 <div className="font-bold mb-2">The Attention Trap</div>
-                <p className="text-sm text-gray-500">Social feeds reward clicks and outrage, not deep learning.</p>
+                <p className="text-sm text-gray-500">Most platforms are built to keep you scrolling.</p>
+                <p className="text-sm text-gray-500">Not learning.</p>
             </div>
-            <div className="bg-primary/5 p-6 rounded-2xl text-center border border-primary/20">
+            <div className="hover:bg-primary/5 p-6 text-center hover:border-primary/20 hover:rounded-2xl transition-all duration-100">
                 <div className="text-4xl mb-4">💡</div>
-                <div className="font-bold mb-2 text-primary">The Stacq Solution</div>
-                <p className="text-sm text-gray-600 font-medium">We reward human curation and genuine utility.</p>
+                <div className="font-bold mb-2">The Stacq Solution</div>
+                <p className="text-sm text-gray-600 font-medium">We reward prople for sharing what acrually helped.</p>
             </div>
          </div>
       </section>
@@ -260,22 +267,22 @@ export default function HowItWorks() {
                     <h3 className="text-3xl font-bold text-[#1db954]">Stacq is</h3>
                     <ul className="space-y-6 text-xl font-medium">
                         <li className="flex gap-4 items-center p-4 bg-white/5 rounded-2xl border border-white/5">
-                            <span className="text-[#1db954] text-2xl">✓</span> Human-curated
+                            <span className="text-[#1db954] text-2xl">✓</span> Curated by real people
                         </li>
                         <li className="flex gap-4 items-center p-4 bg-white/5 rounded-2xl border border-white/5">
-                            <span className="text-[#1db954] text-2xl">✓</span> Usefulness-driven
+                            <span className="text-[#1db954] text-2xl">✓</span> Ranked by usefulness
                         </li>
                         <li className="flex gap-4 items-center p-4 bg-white/5 rounded-2xl border border-white/5">
-                            <span className="text-[#1db954] text-2xl">✓</span> Built for learning
+                            <span className="text-[#1db954] text-2xl">✓</span> Designed for focused discovery
                         </li>
                     </ul>
                 </div>
                 <div className="space-y-8 opacity-60">
                     <h3 className="text-3xl font-bold text-gray-400">Stacq is not</h3>
                     <ul className="space-y-6 text-xl font-medium">
-                        <li className="flex gap-4 items-center p-4"><span>✕</span> A search engine</li>
-                        <li className="flex gap-4 items-center p-4"><span>✕</span> A bookmark dump</li>
-                        <li className="flex gap-4 items-center p-4"><span>✕</span> An ad-driven platform</li>
+                        <li className="flex gap-4 items-center p-4"><span>✕</span> A traditional search engine</li>
+                        <li className="flex gap-4 items-center p-4"><span>✕</span> A bookmark graveyard</li>
+                        <li className="flex gap-4 items-center p-4"><span>✕</span> An ad-first platform</li>
                     </ul>
                 </div>
              </div>
@@ -284,12 +291,12 @@ export default function HowItWorks() {
 
       {/* 8. SOFT ENDING */}
       <section className="px-6 py-32 text-center">
-        <h2 className="text-4xl md:text-5xl font-bold mb-8 text-dark tracking-tight">Curated knowledge.<br/>Without the noise.</h2>
+        <h2 className="text-4xl md:text-5xl font-bold mb-8 text-dark tracking-tight">Useful resources.<br/>No noise.</h2>
         <div className="flex justify-center gap-10 items-center font-bold">
             <Link href="/" className="text-gray-400 hover:text-dark transition-colors border-b border-transparent hover:border-dark pb-1">Return Home</Link>
             <button 
                 onClick={() => setIsModalOpen(true)}
-                className="bg-primary hover:bg-primary-hover text-white px-8 py-4 rounded-full shadow-xl shadow-primary/30 hover:shadow-primary/50 hover:-translate-y-1 transition-all"
+                className="bg-primary cursor-pointer hover:bg-primary-hover text-white px-8 py-4 rounded-full shadow-xl shadow-primary/30 hover:shadow-primary/50 hover:-translate-y-1 transition-all"
             >
                 Join the waitlist
             </button>
